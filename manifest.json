@@ -1,0 +1,23 @@
+{
+  "name": "考勤助手",
+  "description": "计算考勤时间",
+  "version": "2.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "计算考勤时间",
+   "default_icon":"icon.png" 
+  },
+   "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["jquery.js"]
+    }
+    ],
+  "manifest_version": 2
+}
