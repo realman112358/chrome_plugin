@@ -13,3 +13,5 @@ usage: <br>
 
 notice<br>: the time between 18:00 ~18:30 is ignored as dinner time, <br>
 	  :	there may be some bug in the cal process, please contact me, thankyou
+
+[image](https://github.com/realman112358/chrome_plugin/screensnap.png)
