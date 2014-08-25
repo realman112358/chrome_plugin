@@ -11,17 +11,26 @@ var work_day = 0;
 for(var i=0; i< size ; i++) {
 	if(i%3==1){
 		var time_string = data[i].children[0].innerHTML;	
+    var status_string = data[i+1].children[0].innerHTML;  
     var day= data[i-1].children[0].children[0].children[0].innerHTML;
     var day_string = year + "-" + month+ "-"+ day;
     var week_day = new Date(day_string).getDay('d');
     var today = new Date().getDate();
+    var this_month = new Date().getMonth()+1;
     // only cal to last day
     if(day >= today){
+      // only this month has the last day, other month are full caled
+      if( this_month == month)
       break;
     }
     //workday
     if(!(week_day == 0 || week_day == 6)) {
       if(time_string == "无刷卡记录"){
+        //请假
+        if(status_string != "无"){
+          work_day -= 1;
+          time_string = "请假";
+        }
       } else{
         min_all += cal_day_time(time_string); 
       }
